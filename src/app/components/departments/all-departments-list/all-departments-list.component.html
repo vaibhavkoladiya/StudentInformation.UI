@@ -1,0 +1,32 @@
+<div class="container my-5">
+    <h1 class="mb-3">Departments</h1>
+    
+    <table class="table" >
+      <thead>
+          <tr>
+            <th>#</th>
+              <th>Department Name</th>
+              <th>Department Email</th>
+              <th>Department Phonenumber</th>
+              <th>diddd</th>
+              <th></th>
+          
+              
+          </tr>
+      </thead>
+  
+      <tbody>
+          <tr *ngFor ="let department of departments; let i= index">
+            <td>{{i}}</td>
+              <td>{{department.departmentName}}</td>
+              <td>{{department.departmentEmail}}</td>
+              <td>{{department.dphonenumber}}</td>
+              <td>{{department.did}}</td>
+              <td><a [routerLink]="['/departments','departmentstudents', department.did]"> List all students</a></td>
+              <!-- <td><a [routerLink]="['departments','departmentstudents', department.Did]"> List all students</a></td> -->
+          </tr>
+      </tbody>
+  
+    </table>
+    
+  </div>

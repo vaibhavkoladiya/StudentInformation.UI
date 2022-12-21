@@ -1,0 +1,60 @@
+<div class="container my-5">
+    <h1 class="mb-3"> Add Student</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addStudent()">
+                <div class="form-group mb-3">
+                  <label for="fname" class="mb-1"> First name </label>
+                  <input type="text" class="form-control" id="fname" placeholder="Enter First Name here" name="firstName" [(ngModel)] = "addStudentRequest.firstName">
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="lname" class="mb-1"> Last name </label>
+                    <input type="text" class="form-control" id="lname" placeholder="Enter Last name here" name="lastName" [(ngModel)] = "addStudentRequest.lastName">
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="std" class="mb-1"> Student Id </label>
+                    <input type="text" class="form-control" id="std" placeholder="Enter Student Id here" name="studentId" [(ngModel)] = "addStudentRequest.studentId">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="email" class="mb-1"> Email </label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter Email here" name="email" [(ngModel)] = "addStudentRequest.email">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="gender" class="mb-1"> Gender </label>
+                    <input type="text" class="form-control" id="gender" placeholder="Enter Gender here" name="gender" [(ngModel)] = "addStudentRequest.gender">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="dpt" class="mb-1"> Department  </label>
+                    <br>
+                
+                    <select #organization  class="create-user-select-half" name="did" [(ngModel)] = addStudentRequest.did >
+                        <option *ngFor="let o of studepartments"
+                            [ngValue]="o.did" 
+                            [selected]="">
+                            {{ o.departmentName }}
+                        </option>
+                    </select>
+                
+
+                    
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="phone" class="mb-1"> Phonenumber </label>
+                    <input type="number" class="form-control" id="phone" placeholder="Enter Phonenumber here" name="phoneNumber" [(ngModel)] = "addStudentRequest.phoneNumber">
+                </div>
+                
+                <button type="submit" class="btn btn-primary"> Save Student </button>
+                
+            </form>
+        </div>
+    </div>
+    
+
+</div>
